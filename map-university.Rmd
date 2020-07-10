@@ -1,0 +1,33 @@
+---
+title: "R Markdown and Leaflet"
+author: "Kelly Avila"
+date: "10/7/2020"
+output: html_document
+---
+
+## Instructions
+
+Create a web page using R Markdown that features a map created with Leaflet. The map has the information related to Universidad Nacional de Colombia - Bogotá campus.
+
+## Loading the library
+
+```{r setup, include=FALSE}
+library(leaflet)
+```
+
+## Preload map
+
+```{r}
+university_location <- leaflet() %>% 
+  addTiles()
+university_location
+```
+## Final map
+
+```{r}
+library(leaflet)
+my_map_ <- university_location %>%
+  addMarkers(lat= 4.6355555555556, lng=-74.082777777778, 
+             popup="Nacional University")
+my_map_
+```
